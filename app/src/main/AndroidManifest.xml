@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gym"
         >
-        <activity android:name=".signinScreen"></activity>
-        <activity android:name=".Signup.signupScreen" />
-        <activity android:name=".splash.splashScreen">
+        <activity android:name=".addStory.addStory">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".signIn.signinScreen" />
+        <activity android:name=".Signup.signupScreen" />
+        <activity android:name=".splash.splashScreen">
+
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

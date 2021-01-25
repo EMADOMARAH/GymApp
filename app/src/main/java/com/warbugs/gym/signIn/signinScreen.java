@@ -1,4 +1,4 @@
-package com.warbugs.gym;
+package com.warbugs.gym.signIn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.warbugs.gym.R;
 import com.warbugs.gym.Signup.signupScreen;
 
 public class signinScreen extends AppCompatActivity {

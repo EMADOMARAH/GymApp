@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Handler;
 
 import com.warbugs.gym.R;
-import com.warbugs.gym.signinScreen;
+import com.warbugs.gym.signIn.signinScreen;
 
 public class splashScreen extends AppCompatActivity {
 
