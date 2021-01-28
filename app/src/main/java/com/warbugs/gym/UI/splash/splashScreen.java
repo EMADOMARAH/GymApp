@@ -1,4 +1,4 @@
-package com.warbugs.gym.splash;
+package com.warbugs.gym.UI.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Handler;
 
 import com.warbugs.gym.R;
-import com.warbugs.gym.signIn.signinScreen;
+import com.warbugs.gym.UI.signIn.signinScreen;
 
 public class splashScreen extends AppCompatActivity {
 

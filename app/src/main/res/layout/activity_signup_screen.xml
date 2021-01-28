@@ -8,7 +8,7 @@
     android:background="@color/back"
     android:orientation="vertical"
     android:gravity="bottom"
-    tools:context=".Signup.signupScreen"
+    tools:context=".UI.signup.signupScreen"
     >
     <ImageView
         android:layout_width="match_parent"

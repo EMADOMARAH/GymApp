@@ -1,15 +1,15 @@
-package com.warbugs.gym.Signup;
+package com.warbugs.gym.UI.addStory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import com.warbugs.gym.R;
 
-public class signupScreen extends AppCompatActivity {
+public class addStory extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_screen);
+        setContentView(R.layout.activity_add_story);
     }
 }

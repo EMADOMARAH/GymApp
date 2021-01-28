@@ -8,7 +8,7 @@
     android:background="@color/back"
     android:orientation="vertical"
     android:gravity="bottom"
-    tools:context=".signIn.signinScreen"
+    tools:context=".UI.signIn.signinScreen"
     >
 
     <ImageView
