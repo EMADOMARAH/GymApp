@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.help.help"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UI.Fragments.help_fragment"
     android:orientation="vertical"
     android:background="@color/back"
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +60,6 @@
                 android:layout_height="match_parent"
                 app:cardCornerRadius="10dp"
                 >
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,18 +74,19 @@
                         app:cardCornerRadius="25dp"
                         android:backgroundTint="#ffe8bb"
                         >
+
                         <androidx.appcompat.widget.AppCompatImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:backgroundTint="#ffe8bb"
+                            android:src="@drawable/ic_phone"
                             />
                     </com.google.android.material.card.MaterialCardView>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/yellow"
-                        android:text="Call Us"
+                        android:text=" Call Us"
                         android:paddingTop="5dp"
 
                         />
@@ -98,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="10dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 >
 
                 <LinearLayout
@@ -114,6 +115,7 @@
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="25dp"
                         android:backgroundTint="#9af9d0"
+                        android:layout_gravity="center"
                         >
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:layout_width="wrap_content"
@@ -140,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="10dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 >
 
                 <LinearLayout
@@ -168,7 +170,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#e64cfc"
-                        android:text="Chat"
+                        android:text="  Chat  "
                         android:gravity="center"
                         android:layout_gravity="center"
                         android:paddingTop="5dp"
@@ -294,5 +296,4 @@
 
 
     </LinearLayout>
-
 </LinearLayout>

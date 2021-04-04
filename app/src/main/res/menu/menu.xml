@@ -12,11 +12,11 @@
         android:title="Search" />
 
     <item
-        android:id="@+id/placeholder"
-        android:title=""
-        android:enabled="false"
-        android:checkable="false"
+        android:id="@+id/bmi"
+        android:icon="@drawable/ic_bmi"
+        android:title="Bmi"
         />
+
 
     <item
         android:id="@+id/Profile"

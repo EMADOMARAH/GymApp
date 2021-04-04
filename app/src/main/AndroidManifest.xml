@@ -12,20 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fab_Bottom_app_bar"
         >
-        <activity android:name=".UI.home.home">
+        <activity android:name=".UI.forgetPassword.forgetPassword"></activity>
+        <activity android:name=".UI.addStory.addStory" />
+        <activity android:name=".UI.signIn.signinScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.help.help" />
-        <activity android:name=".UI.profile.profile" />
-        <activity android:name=".UI.addStory.addStory" />
-        <activity android:name=".UI.signIn.signinScreen" />
-        <activity android:name=".UI.signup.signupScreen" />
+        <activity android:name=".UI.signup.signupScreen">
+
+        </activity>
         <activity android:name=".UI.splash.splashScreen" />
         <activity android:name=".MainActivity">
+
 
         </activity>
     </application>

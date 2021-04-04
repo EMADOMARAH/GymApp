@@ -26,54 +26,86 @@
         android:layout_marginRight="60dp"
         android:layout_marginLeft="60dp"
         >
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_signup_txt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginBottom="20dp"
-            android:paddingLeft="10dp"
-            android:background="#261b15"
-            android:drawableLeft="@drawable/ic_single_01"
-            android:singleLine="true"
-            android:drawablePadding="10dp"
-            android:inputType="textEmailAddress"
-            android:hint="Email"
+            app:startIconDrawable="@drawable/ic_single_01"
+            app:startIconTint="@color/white"
             android:textColorHint="#a29993"
-            android:textSize="15dp"
-            android:textColor="#FFF"
-            />
-        <com.google.android.material.textfield.TextInputEditText
+            app:errorEnabled="true"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#261b15"
+                android:singleLine="true"
+                android:drawablePadding="10dp"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:textSize="15dp"
+                android:textColor="#FFF"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pass_signup_txt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginBottom="20dp"
-            android:paddingLeft="10dp"
-            android:background="#261b15"
-            android:drawableLeft="@drawable/ic_lock_open"
-            android:singleLine="true"
-            android:drawablePadding="10dp"
-            android:inputType="textPassword"
-            android:hint="Password"
+            app:startIconDrawable="@drawable/ic_lock_open"
+            app:startIconTint="@color/white"
             android:textColorHint="#a29993"
-            android:textSize="15dp"
-            android:textColor="#FFF"
-            />
-        <com.google.android.material.textfield.TextInputEditText
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+            app:errorEnabled="true"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:background="#261b15"
+                android:singleLine="true"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:textSize="15dp"
+                android:textColor="#FFF"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/re_pass_signup_txt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginBottom="20dp"
-            android:paddingLeft="10dp"
-            android:background="#261b15"
-            android:drawableLeft="@drawable/ic_lock_open"
-            android:singleLine="true"
-            android:drawablePadding="10dp"
-            android:inputType="textPassword"
-            android:hint="Re-enter Password"
+            app:startIconDrawable="@drawable/ic_lock_open"
+            app:startIconTint="@color/white"
             android:textColorHint="#a29993"
-            android:textSize="15dp"
-            android:textColor="#FFF"
-            />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+            app:errorEnabled="true"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:background="#261b15"
+                android:drawableLeft="@drawable/ic_lock_open"
+                android:singleLine="true"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword"
+                android:hint="Re-enter Password"
+                android:textSize="15dp"
+                android:textColor="#FFF"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </LinearLayout>
     <LinearLayout
@@ -83,13 +115,15 @@
         android:gravity="center_horizontal"
         >
     <Button
+        android:id="@+id/signup_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SIGN UP"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:background="@drawable/mybutton"
         android:backgroundTint="@color/yellow"
-
+        android:onClick="signUpBtnClicked"
         />
     </LinearLayout>
     <LinearLayout

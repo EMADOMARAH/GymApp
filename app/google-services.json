@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "94048793853",
+    "firebase_url": "https://fit-way-e81a7-default-rtdb.firebaseio.com",
+    "project_id": "fit-way-e81a7",
+    "storage_bucket": "fit-way-e81a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94048793853:android:9542c872ba0ffd413d7a94",
+        "android_client_info": {
+          "package_name": "com.warbugs.gym"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94048793853-3m7rsov80aij3jb5ej4etjhs5n7ju8st.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.warbugs.gym",
+            "certificate_hash": "cd8fa899ed60ad7d65a1125e3b6d38e4762e50d9"
+          }
+        },
+        {
+          "client_id": "94048793853-29a2uu2u4gp640e4cvfgd43u8vf6p0f9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRG-A0KD_EoVrwZmEAga-8hN_8R_f9ocQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94048793853-29a2uu2u4gp640e4cvfgd43u8vf6p0f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
