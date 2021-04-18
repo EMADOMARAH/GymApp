@@ -3,6 +3,9 @@ package com.warbugs.gym.UI.Fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
+import androidx.activity.OnBackPressedDispatcherOwner;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -64,6 +67,7 @@ public class home_fragment extends Fragment {
 
         return view;
     }
+
 
 
 

@@ -3,21 +3,15 @@ package com.warbugs.gym;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.warbugs.gym.UI.Fragments.bmi_fragment;
-import com.warbugs.gym.UI.Fragments.calory_fragment;
 import com.warbugs.gym.UI.Fragments.help_fragment;
 import com.warbugs.gym.UI.Fragments.home_fragment;
 import com.warbugs.gym.UI.Fragments.profile_fragment;
-import com.warbugs.gym.UI.addStory.addStory;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -72,10 +66,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new home_fragment();
                 break;
 
-            case R.id.grads:
-                fragment = new calory_fragment();
-                break;
-
             case R.id.Profile:
                 fragment = new profile_fragment();
                 break;
@@ -92,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return loadFragment(fragment);
     }
 
-    private boolean loadFragment(Fragment fragment) {
+    public boolean loadFragment(Fragment fragment) {
         //switching fragment
         if (fragment != null) {
             getSupportFragmentManager()
@@ -105,4 +95,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

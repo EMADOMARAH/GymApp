@@ -4,6 +4,16 @@
     package="com.warbugs.gym"
     >
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false"
+        />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -12,23 +22,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fab_Bottom_app_bar"
         >
-        <activity android:name=".UI.forgetPassword.forgetPassword"></activity>
+        <activity android:name=".UI.myStories.myStories"></activity>
+        <activity android:name=".UI.forgetPassword.forgetPassword" />
         <activity android:name=".UI.addStory.addStory" />
-        <activity android:name=".UI.signIn.signinScreen" >
+        <activity android:name=".UI.signIn.signinScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.signup.signupScreen">
-
-        </activity>
+        <activity android:name=".UI.signup.signupScreen"></activity>
         <activity android:name=".UI.splash.splashScreen" />
-        <activity android:name=".MainActivity">
-
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -19,13 +19,14 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/back_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:src="@drawable/ic_baseline_arrow_back_24"
             android:background="@color/back"
             android:layout_weight="1"
-            android:onClick="BackOneStep"
+            android:onClick="addStoryOnClick"
             />
 
         <LinearLayout
@@ -85,23 +86,46 @@
                 android:layout_height="match_parent"
                 android:textColorHint="@color/white"
                 android:gravity="left|top"
+                android:orientation="vertical"
                 app:hintTextColor="@color/white"
+                android:background="#6b6b6b"
                 >
 
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mypost"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="270dp"
                     android:hint="Your Story : "
                     android:textColorHint="@color/white"
                     android:gravity="top|left"
+
                     android:textSize="20sp"
                     android:backgroundTint="#6b6b6b"
                     android:textColor="@color/white"
                     />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                    android:elevation="0dp"
+                    android:backgroundTint="#6b6b6b">
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:id="@+id/post_img"
+
+                        android:scaleType="fitCenter"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
+
 
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/post_cam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/cam"
@@ -109,7 +133,7 @@
                 android:elevation="0dp"
                 app:elevation="0dp"
                 android:layout_gravity="right|bottom"
-                android:onClick="CameraClicked"
+                android:onClick="addStoryOnClick"
 
                 />
 
@@ -119,6 +143,7 @@
 
 
     <Button
+        android:id="@+id/post_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Post"
@@ -129,7 +154,7 @@
         android:layout_marginRight="50dp"
         android:background="@drawable/mybutton"
         android:backgroundTint="@color/yellow"
-        android:onClick="PostButtonClicked"
+        android:onClick="addStoryOnClick"
         />
 
     <LinearLayout

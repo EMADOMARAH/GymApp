@@ -10,6 +10,7 @@
     >
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.2"
@@ -43,6 +44,7 @@
             android:paddingLeft="10dp">
 
             <TextView
+                android:id="@+id/profile_first_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Emilia"
@@ -50,6 +52,7 @@
                 android:textSize="40sp"
                 />
             <TextView
+                android:id="@+id/profile_last_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Clarke"
@@ -72,33 +75,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingHorizontal="50dp"
+            android:gravity="center_horizontal"
             >
             <Button
+                android:id="@+id/my_stories_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_eye"
-                android:text="547"
+                android:drawableLeft="@drawable/ic_my_stories"
+                android:text="My Stories"
                 android:textColor="@color/white"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_fire"
-                android:text="127"
-                android:textColor="@color/white"
-                android:layout_gravity="right"
-                android:gravity="right"
-
-
-                />
-
 
         </LinearLayout>
 

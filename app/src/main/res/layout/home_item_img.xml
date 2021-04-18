@@ -33,6 +33,7 @@
                 android:paddingLeft="5dp"
                 >
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Emelya Clark"
@@ -42,6 +43,7 @@
                     android:textSize="18sp"
                     />
                 <TextView
+                    android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2 hours ago"
@@ -71,24 +73,22 @@
 
         </LinearLayout>
         <TextView
+            android:id="@+id/post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lorem2"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             />
-        <androidx.recyclerview.widget.RecyclerView
+        <ImageView
             android:id="@+id/imgitems"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
 
-            >
-
-
-        </androidx.recyclerview.widget.RecyclerView>
+            />
 
 
     </LinearLayout>

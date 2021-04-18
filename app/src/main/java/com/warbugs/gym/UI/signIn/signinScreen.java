@@ -12,12 +12,18 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.warbugs.gym.MainActivity;
 import com.warbugs.gym.Network.ApiInterface;
 import com.warbugs.gym.Network.RequiestModels.LoginModel;
 import com.warbugs.gym.Network.ResponseModels.Response;
 import com.warbugs.gym.R;
 import com.warbugs.gym.UI.signup.signupScreen;
 import com.warbugs.gym.UI.forgetPassword.forgetPassword;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,10 +38,24 @@ public class signinScreen extends AppCompatActivity {
     Retrofit retrofit;
     LoginModel loginModel;
 
+    SharedPreferences preferences ;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin_screen);
+
+        preferences =getSharedPreferences("GYM_APP", Context.MODE_PRIVATE);
+        if (preferences.contains("TOKEN")){
+            startActivity(new Intent(getApplicationContext() , MainActivity.class));
+            Toast.makeText(this, preferences.getString("TOKEN" , "").toString(), Toast.LENGTH_SHORT).show();
+            System.out.println(preferences.getString("TOKEN" , "").toString());
+            finish();
+        }else {
+            Toast.makeText(this, "NOOOOOOOOOOO", Toast.LENGTH_SHORT).show();
+        }
 
         signinEmail  =findViewById(R.id.signin_input_email);
         signinPassword = findViewById(R.id.signin_input_password);
@@ -51,6 +71,7 @@ public class signinScreen extends AppCompatActivity {
         if(!validateSigninEmail() | !validateSigninPassword()){
             return;
         }
+
         loginModel = new LoginModel(email,password);
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
 
@@ -59,14 +80,45 @@ public class signinScreen extends AppCompatActivity {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
 
-                String AccessTocken = response.body().getMessage().getCredentials().getAccessToken().toString();
-                String firstName = response.body().getMessage().getProfile().get(0).getFirstname().toString();
-                String M = "welcome " + firstName;
-                Toast.makeText(signinScreen.this, M, Toast.LENGTH_SHORT).show();
-                //Save token here
-                SharedPreferences preferences =getSharedPreferences("GYM_APP", Context.MODE_PRIVATE);
-                // Creating an Editor object to edit(write to the file)
-                preferences.edit().putString("TOKEN",AccessTocken).apply();
+                if (response.isSuccessful()){
+                    String AccessTocken = response.body().getMessage().getCredentials().getAccessToken().toString();
+                    String responseFirstName = response.body().getMessage().getProfile().get(0).getFirstname().toString();
+                    String responseLastName = response.body().getMessage().getProfile().get(0).getLastname().toString();
+                    String responseName = response.body().getMessage().getProfile().get(0).getName().toString();
+                    String responseEmail = response.body().getMessage().getProfile().get(0).getEmail().toString();
+                    String responsePhone = response.body().getMessage().getProfile().get(0).getPhone().toString();
+                    String responsePhoto = response.body().getMessage().getProfile().get(0).getPhoto().toString();
+                    int responseGender = response.body().getMessage().getProfile().get(0).getGender();
+                    String responseBirthdate = response.body().getMessage().getProfile().get(0).getBirthdate().toString();
+
+                    String M = "welcome " + responseFirstName;
+                    Toast.makeText(signinScreen.this, M, Toast.LENGTH_SHORT).show();
+                    //Save token here
+                    // Creating an Editor object to edit(write to the file)
+                    preferences.edit().putString("TOKEN",AccessTocken).apply();
+                    preferences.edit().putString("FirstName", responseFirstName).apply();
+                    preferences.edit().putString("LastName", responseLastName).apply();
+                    preferences.edit().putString("Name", responseName).apply();
+                    preferences.edit().putString("Email", responseEmail).apply();
+                    preferences.edit().putString("Phone", responsePhone).apply();
+                    preferences.edit().putString("Photo", responsePhoto).apply();
+                    preferences.edit().putInt("Gender", responseGender).apply();
+                    preferences.edit().putString("BirthDate", responseBirthdate).apply();
+                    preferences.edit().commit();
+
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                }else {
+                    try {
+                        String error = response.errorBody().string();
+                        JSONObject jsonObject = new JSONObject(error);
+                        String E = jsonObject.getString("message");
+
+                        Toast.makeText(signinScreen.this, E.toString(), Toast.LENGTH_SHORT).show();
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
 
             }
 
@@ -82,7 +134,7 @@ public class signinScreen extends AppCompatActivity {
     private Boolean validateSigninEmail() {
         email = signinEmail.getEditText().getText().toString().trim();
         if (email.isEmpty()) {
-            signinEmail.setError("Field cannot be empty");
+            signinEmail.setError("cannot be empty");
             Toast.makeText(this, "Email can't be Empty!", Toast.LENGTH_SHORT).show();
             return false;
         }else {

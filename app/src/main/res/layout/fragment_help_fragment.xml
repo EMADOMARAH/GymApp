@@ -76,6 +76,7 @@
                         >
 
                         <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/call_us_btn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:backgroundTint="#ffe8bb"
@@ -118,6 +119,7 @@
                         android:layout_gravity="center"
                         >
                         <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/email_us_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_mail"
@@ -160,6 +162,7 @@
                         android:backgroundTint="#fac5ff"
                         >
                         <androidx.appcompat.widget.AppCompatImageButton
+                           android:id="@+id/chat_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_live_chat"
@@ -191,41 +194,45 @@
             android:layout_marginTop="15dp"
 
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="8dp"
                 >
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="QUICK CONTACY"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
                     android:gravity="center"
                     android:paddingBottom="5dp"
+                    android:text="QUICK CONTACY"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
                     />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:requiresFadingEdge="horizontal"
-                    android:textColor="@color/black"
-                    android:paddingLeft="10dp"
                     android:layout_marginBottom="3dp"
+                    android:paddingLeft="10dp"
+                    android:requiresFadingEdge="horizontal"
+                    android:text="Name"
+                    android:textColor="@color/black"
                     />
 
                 <EditText
+                    android:id="@+id/full_name_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Full Name"
                     android:background="@drawable/edittextborder"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
+                    android:hint="Enter Full Name"
                     android:paddingVertical="6dp"
                     android:paddingLeft="10dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
                     />
 
                 <TextView
@@ -239,61 +246,70 @@
                     />
 
                 <EditText
+                    android:id="@+id/email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Your Email"
                     android:background="@drawable/edittextborder"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
+                    android:hint="Enter Your Email"
                     android:paddingVertical="6dp"
                     android:paddingLeft="10dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
                     />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Message"
-                    android:requiresFadingEdge="horizontal"
-                    android:textColor="@color/black"
-                    android:paddingLeft="10dp"
                     android:layout_marginBottom="3dp"
+                    android:paddingLeft="10dp"
+                    android:requiresFadingEdge="horizontal"
+                    android:text="Message"
+                    android:textColor="@color/black"
                     />
 
                 <EditText
+                    android:id="@+id/message_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter Message"
                     android:background="@drawable/edittextborder"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:paddingTop="6dp"
+                    android:hint="Enter Message"
                     android:paddingLeft="10dp"
+                    android:paddingTop="6dp"
                     android:paddingBottom="50dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
                     />
 
                 <Button
+                    android:id="@+id/send_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/help_btn_bk"
+                    android:drawableEnd="@drawable/ic_arrow"
                     android:text="Send"
                     android:textColor="@color/black"
                     android:textSize="10sp"
-                    android:drawableEnd="@drawable/ic_arrow"
-                    android:layout_gravity="center"
-                    android:background="@drawable/help_btn_bk"
-                    android:layout_marginTop="10dp"
 
                     />
             </LinearLayout>
 
+
         </com.google.android.material.card.MaterialCardView>
-
-
-
-
-
-
-
-
-
     </LinearLayout>
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="50dp"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:drawableEnd="@drawable/ic_baseline_exit_to_app_24"
+        android:layout_gravity="center"
+        android:background="@drawable/help_btn_bk"
+        android:layout_marginTop="10dp"
+
+        />
 </LinearLayout>

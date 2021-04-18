@@ -5,34 +5,34 @@ import com.google.gson.annotations.SerializedName;
 public class ProfileItem{
 
 	@SerializedName("firstname")
-	public String firstname;
+	private String firstname;
 
 	@SerializedName("active_status")
-	public int activeStatus;
+	private int activeStatus;
 
 	@SerializedName("birthdate")
-	public String birthdate;
+	private String birthdate;
 
 	@SerializedName("gender")
-	public int gender;
+	private int gender;
 
 	@SerializedName("phone")
-	public String phone;
+	private String phone;
 
 	@SerializedName("name")
-	public String name;
+	private String name;
 
 	@SerializedName("photo")
-	public String photo;
+	private String photo;
 
 	@SerializedName("email")
-	public String email;
+	private String email;
 
 	@SerializedName("lastname")
-	public String lastname;
+	private String lastname;
 
 	@SerializedName("status")
-	public int status;
+	private int status;
 
 	public String getFirstname(){
 		return firstname;
