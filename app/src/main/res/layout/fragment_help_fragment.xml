@@ -59,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:cardCornerRadius="10dp"
+                android:backgroundTint="@color/white"
                 >
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -101,6 +102,7 @@
                 android:layout_height="match_parent"
                 app:cardCornerRadius="10dp"
                 android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/white"
                 >
 
                 <LinearLayout
@@ -145,6 +147,7 @@
                 android:layout_height="match_parent"
                 app:cardCornerRadius="10dp"
                 android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/white"
                 >
 
                 <LinearLayout
@@ -192,6 +195,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
             android:layout_marginTop="15dp"
+            android:backgroundTint="@color/white"
 
             >
 
@@ -289,6 +293,7 @@
                     android:background="@drawable/help_btn_bk"
                     android:drawableEnd="@drawable/ic_arrow"
                     android:text="Send"
+                    android:backgroundTint="#F36100"
                     android:textColor="@color/black"
                     android:textSize="10sp"
 
@@ -306,6 +311,7 @@
         android:text="Logout"
         android:textColor="@color/black"
         android:textSize="10sp"
+        android:backgroundTint="#F36100"
         android:drawableEnd="@drawable/ic_baseline_exit_to_app_24"
         android:layout_gravity="center"
         android:background="@drawable/help_btn_bk"

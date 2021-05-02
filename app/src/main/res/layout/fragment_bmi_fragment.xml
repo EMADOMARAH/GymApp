@@ -156,6 +156,7 @@
                     android:textSize="12sp"
                     android:drawableEnd="@drawable/ic_calc"
                     android:layout_gravity="center"
+                    android:backgroundTint="#F36100"
                     android:background="@drawable/help_btn_bk"
                     android:layout_marginTop="20dp"
                     android:layout_marginHorizontal="50dp"

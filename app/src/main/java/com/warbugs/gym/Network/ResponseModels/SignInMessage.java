@@ -2,7 +2,7 @@ package com.warbugs.gym.Network.ResponseModels;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Response{
+public class SignInMessage{
 
 	@SerializedName("message")
 	private Message message;

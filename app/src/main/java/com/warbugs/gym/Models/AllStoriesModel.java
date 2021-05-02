@@ -1,31 +1,15 @@
 package com.warbugs.gym.Models;
 
-public class MyStoriesModel {
+public class AllStoriesModel {
     String name,description,created_at , photo;
     int img;
 
-    public MyStoriesModel(String photo, String name, String description, String created_at,int img) {
-        this.photo = photo;
+    public AllStoriesModel(String name, String description, String created_at, String photo, int img) {
         this.name = name;
         this.description = description;
         this.created_at = created_at;
-        this.img = img;
-    }
-
-    public int getImg() {
-        return img;
-    }
-
-    public void setImg(int img) {
-        this.img = img;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
         this.photo = photo;
+        this.img = img;
     }
 
     public String getName() {
@@ -50,5 +34,21 @@ public class MyStoriesModel {
 
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }

@@ -1,17 +1,16 @@
-package com.warbugs.gym.Network.ResponseModels;
+package com.warbugs.gym.Network.ResponseModels.AllSoriesResponse;
 
-import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class MyStoriesResponse{
+public class AllStoriesResponse{
 
 	@SerializedName("message")
-	private List<MessageItem> message;
+	private Message message;
 
 	@SerializedName("status")
 	private boolean status;
 
-	public List<MessageItem> getMessage(){
+	public Message getMessage(){
 		return message;
 	}
 

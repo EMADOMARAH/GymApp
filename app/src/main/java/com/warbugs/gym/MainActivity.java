@@ -29,32 +29,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                switch (item.getItemId()) {
-//                    case R.id.home:
-//                        fm.beginTransaction().replace(R.id.container, new home).commit();
-//                        break;
-//                    case R.id.grads:
-//
-//                        break;
-//                    case R.id.Profile:
-//
-//                        break;
-//                    case R.id.help:
-//
-//                        break;
-//
-//                }
-//                return true;
-//            }
-//        });
-
-
-
-
     }
 
     @Override

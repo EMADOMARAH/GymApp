@@ -12,13 +12,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.gson.JsonObject;
 import com.warbugs.gym.MainActivity;
 import com.warbugs.gym.Network.ApiInterface;
 import com.warbugs.gym.Network.RequiestModels.RegisterModel;
-import com.warbugs.gym.Network.ResponseModels.Response;
+import com.warbugs.gym.Network.ResponseModels.SignUpResponse;
 import com.warbugs.gym.R;
-import com.warbugs.gym.UI.signIn.signinScreen;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -110,10 +108,10 @@ public class signupScreen extends AppCompatActivity {
         registerModel = new RegisterModel(email,password,firstName,lastName,name,phone,gender,birthdate);
         apiInterface = retrofit.create(ApiInterface.class);
 
-        Call<Response> signUpCall = apiInterface.register(registerModel);
-        signUpCall.enqueue(new Callback<Response>() {
+        Call<SignUpResponse> signUpCall = apiInterface.register(registerModel);
+        signUpCall.enqueue(new Callback<SignUpResponse>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<SignUpResponse> call, retrofit2.Response<SignUpResponse> response) {
                 if (response.isSuccessful()){
 
                     String AccessTocken = response.body().getMessage().getCredentials().getAccessToken().toString();
@@ -158,7 +156,7 @@ public class signupScreen extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<SignUpResponse> call, Throwable t) {
                 Toast.makeText(signupScreen.this, "Check your internet", Toast.LENGTH_SHORT).show();
             }
         });

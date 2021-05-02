@@ -11,7 +11,7 @@ public class Credentials{
 	private String tokenType;
 
 	@SerializedName("expires_in")
-	private int expiresIn;
+	private long expiresIn;
 
 	public String getAccessToken(){
 		return accessToken;
@@ -21,7 +21,7 @@ public class Credentials{
 		return tokenType;
 	}
 
-	public int getExpiresIn(){
+	public long getExpiresIn(){
 		return expiresIn;
 	}
 }

@@ -89,8 +89,8 @@ public class help_fragment extends Fragment {
         callUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent openPhone = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "125-668-886"));
-                startActivity(openPhone);
+//                Intent openPhone = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "125-668-886"));
+//                startActivity(openPhone);
             }
         });
 

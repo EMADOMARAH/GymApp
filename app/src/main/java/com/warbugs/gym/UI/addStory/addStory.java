@@ -159,6 +159,7 @@ public class addStory extends AppCompatActivity {
             case R.id.post_btn:
                 CheckForData();
                 SendStory();
+                onBackPressed();
 
                 break;
             case R.id.post_cam:

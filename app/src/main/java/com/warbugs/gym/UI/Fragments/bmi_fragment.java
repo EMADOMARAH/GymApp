@@ -46,6 +46,7 @@ public class bmi_fragment extends Fragment {
 
     double weight,hieght,age;
     String weightString ,hightString,ageString;
+    SharedPreferences preferences;
 
     Button calc_btn;
 
@@ -59,7 +60,10 @@ public class bmi_fragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_bmi_fragment, container, false);
 
-        TOKEN = "8c44f290bamsh3357d1fc0cec729p1db576jsnfdcd588fa753";
+        preferences = getActivity().getSharedPreferences("GYM_APP", Context.MODE_PRIVATE);
+        TOKEN = preferences.getString("TOKEN", "");
+
+        //TOKEN = "8c44f290bamsh3357d1fc0cec729p1db576jsnfdcd588fa753";
 
         genderSpinner = view.findViewById(R.id.genderSpinner);
         initspinnerfooter();

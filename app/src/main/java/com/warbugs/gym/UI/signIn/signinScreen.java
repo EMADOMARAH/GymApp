@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 
@@ -15,7 +13,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.warbugs.gym.MainActivity;
 import com.warbugs.gym.Network.ApiInterface;
 import com.warbugs.gym.Network.RequiestModels.LoginModel;
-import com.warbugs.gym.Network.ResponseModels.Response;
+import com.warbugs.gym.Network.ResponseModels.SignInMessage;
 import com.warbugs.gym.R;
 import com.warbugs.gym.UI.signup.signupScreen;
 import com.warbugs.gym.UI.forgetPassword.forgetPassword;
@@ -50,11 +48,13 @@ public class signinScreen extends AppCompatActivity {
         preferences =getSharedPreferences("GYM_APP", Context.MODE_PRIVATE);
         if (preferences.contains("TOKEN")){
             startActivity(new Intent(getApplicationContext() , MainActivity.class));
-            Toast.makeText(this, preferences.getString("TOKEN" , "").toString(), Toast.LENGTH_SHORT).show();
-            System.out.println(preferences.getString("TOKEN" , "").toString());
+            //Toast.makeText(this, preferences.getString("TOKEN" , "").toString(), Toast.LENGTH_SHORT).show();
+            //System.out.println(preferences.getString("TOKEN" , "").toString());
+            String fn = preferences.getString("FirstName" , "");
+            Toast.makeText(this, "Hi " + fn.toString(), Toast.LENGTH_SHORT).show();
             finish();
         }else {
-            Toast.makeText(this, "NOOOOOOOOOOO", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "NOOOOOOOOOOO", Toast.LENGTH_SHORT).show();
         }
 
         signinEmail  =findViewById(R.id.signin_input_email);
@@ -75,10 +75,10 @@ public class signinScreen extends AppCompatActivity {
         loginModel = new LoginModel(email,password);
         ApiInterface apiInterface = retrofit.create(ApiInterface.class);
 
-        Call<Response> signInCall= apiInterface.login(loginModel);
-        signInCall.enqueue(new Callback<Response>() {
+        Call<SignInMessage> signInCall= apiInterface.login(loginModel);
+        signInCall.enqueue(new Callback<SignInMessage>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<SignInMessage> call, retrofit2.Response<SignInMessage> response) {
 
                 if (response.isSuccessful()){
                     String AccessTocken = response.body().getMessage().getCredentials().getAccessToken().toString();
@@ -123,8 +123,9 @@ public class signinScreen extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<SignInMessage> call, Throwable t) {
                 Toast.makeText(signinScreen.this, "Check your Internet", Toast.LENGTH_SHORT).show();
+                System.out.println(t.toString());
             }
         });
 

@@ -1,23 +1,17 @@
-package com.warbugs.gym.Network.ResponseModels;
+package com.warbugs.gym.Network.ResponseModels.AllSoriesResponse;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MessageItem{
+public class User{
 
 	@SerializedName("updated_at")
 	private String updatedAt;
 
-	@SerializedName("user_id")
-	private int userId;
+	@SerializedName("type_id")
+	private int typeId;
 
 	@SerializedName("name")
 	private String name;
-
-	@SerializedName("description")
-	private String description;
-
-	@SerializedName("photo")
-	private String photo;
 
 	@SerializedName("created_at")
 	private String createdAt;
@@ -28,24 +22,22 @@ public class MessageItem{
 	@SerializedName("deleted_at")
 	private Object deletedAt;
 
+	@SerializedName("email")
+	private String email;
+
+	@SerializedName("status")
+	private int status;
+
 	public String getUpdatedAt(){
 		return updatedAt;
 	}
 
-	public int getUserId(){
-		return userId;
+	public int getTypeId(){
+		return typeId;
 	}
 
 	public String getName(){
 		return name;
-	}
-
-	public String getDescription(){
-		return description;
-	}
-
-	public String getPhoto(){
-		return photo;
 	}
 
 	public String getCreatedAt(){
@@ -58,5 +50,13 @@ public class MessageItem{
 
 	public Object getDeletedAt(){
 		return deletedAt;
+	}
+
+	public String getEmail(){
+		return email;
+	}
+
+	public int getStatus(){
+		return status;
 	}
 }

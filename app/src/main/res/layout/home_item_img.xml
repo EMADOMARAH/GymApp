@@ -61,11 +61,13 @@
                 android:layout_weight="1"
                 />
             <Button
+                android:id="@+id/follow_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:text="Follow"
                 android:textColor="@color/white"
                 android:textSize="10sp"
+                android:backgroundTint="#F36100"
                 android:background="@drawable/help_btn_bk"
                 android:layout_gravity="center"
                 />
